@@ -19,7 +19,7 @@ class CreateSitesTable extends Migration
             $table->string('lugar',60);
             $table->string('nombre',60);
             $table->string('direccion',60);
-            $table->float('telefono',12);
+            $table->string('telefono',40);
             $table->string('correo',60);
             $table->string('foto');
             $table->string('descripcion');

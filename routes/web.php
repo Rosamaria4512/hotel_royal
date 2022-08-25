@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\SiteController;
+use App\Models\Service;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +17,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
+
+Route::resource('sitio',SiteController::class);
+Route::resource('servicio',ServiceController::class);
